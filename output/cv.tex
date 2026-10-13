@@ -1,0 +1,198 @@
+% ============================================================
+%  CV - Irvan Agustriono Lumban Gaol
+%  Compiler : pdflatex (MiKTeX)
+%  ATS-safe : charter, T1, glyphtounicode, no images/tables
+% ============================================================
+\documentclass[9.5pt,a4paper]{article}
+
+% --- Encoding & Font (Charter: clean, readable, ATS-safe) ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{microtype}
+
+% --- ATS Copyability ---
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% --- Page Layout ---
+\usepackage[top=1.1cm, bottom=1.1cm, left=1.4cm, right=1.4cm]{geometry}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% --- Color ---
+\usepackage[dvipsnames]{xcolor}
+\definecolor{navydark}{RGB}{20,40,80}
+\definecolor{accentgray}{RGB}{100,100,100}
+
+% --- Hyperlinks ---
+\usepackage[
+  colorlinks=true,
+  urlcolor=navydark,
+  pdfauthor={Irvan Agustriono Lumban Gaol},
+  pdftitle={Irvan Agustriono Lumban Gaol - CV},
+  pdfsubject={Software Developer and Tester Resume},
+  hidelinks
+]{hyperref}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{
+  nosep,
+  leftmargin=1.4em,
+  itemsep=1pt,
+  topsep=1.5pt,
+  parsep=0pt
+}
+
+% --- Tabular Tools ---
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- Section Styling ---
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{navydark}\bfseries\normalsize}
+  {}{0em}{}
+  [\vspace{0.5pt}\color{navydark}\hrule\vspace{3pt}]
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+% --- Helpers ---
+\newcommand{\cvheading}[4]{%
+  {\textbf{#1}\hfill\textbf{#2}\\
+  \textit{\color{accentgray}#3}\hfill\textit{\color{accentgray}#4}}
+}
+\newcommand{\cvproject}[3]{%
+  {\textbf{#1}\hfill\textit{\color{accentgray}#2}\\
+  \footnotesize\color{accentgray}#3}
+}
+
+% ============================================================
+\begin{document}
+
+% ---- HEADER ------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries\color{navydark} IRVAN AGUSTRIONO LUMBAN GAOL}\\[4pt]
+  \small
+  +62 822-8447-1634 \enspace\textbar\enspace
+  \href{mailto:irvanastroboy@gmail.com}{irvanastroboy@gmail.com} \enspace\textbar\enspace
+  \href{https://www.linkedin.com/in/irvan-lumbangaol-9478372b4}{linkedin.com/in/irvan-lumbangaol} \enspace\textbar\enspace
+  \href{https://github.com/irvanastroboy}{github.com/irvanastroboy}\\[2pt]
+  \href{https://irvanagustriono.my.id}{irvanagustriono.my.id} \enspace\textbar\enspace
+  Siborongborong, Sumatera Utara
+\end{center}
+
+% ---- PROFESSIONAL SUMMARY ----------------------------------
+\section{Professional Summary}
+
+D3 IT graduate (GPA 3.26, Institut Teknologi Del) with production experience across mobile (React Native, Flutter), backend (Node.js/Express, Laravel, Golang), and cloud (EC2, NevaCloud VPS). Final year project: skin disease classifier with ConvNeXt Tiny, 92\% accuracy. Targeting \textbf{Software Developer} (Fullstack / Mobile) and \textbf{QA / Tester} roles.
+
+% ---- TECHNICAL SKILLS -------------------------------------
+\section{Technical Skills}
+
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l X @{}}
+  Languages       & TypeScript, JavaScript, Dart, PHP, Golang, Python, SQL \\
+  Mobile          & React Native 0.74 (TypeScript), Flutter (Dart) \\
+  Frontend        & React.js, Next.js, Vite + React, Laravel Inertia \\
+  Backend         & Node.js 20 + Express (TypeScript), Laravel (PHP), Golang REST API \\
+  Databases       & PostgreSQL 16, MySQL, Firebase Firestore \\
+  DevOps / Cloud  & Docker, Docker Compose, MinIO, Amazon EC2, NevaCloud VPS, Linux (SSH, Security Groups) \\
+  ML / AI         & PyTorch, ConvNeXt Tiny, Roboflow (dataset annotation) \\
+  Testing / Tools & Postman (API testing), Git, GitHub, WebSocket \\
+\end{tabularx}
+
+% ---- EXPERIENCE --------------------------------
+\section{Experience}
+
+\cvheading{Flashcom Indonesia}{Mar 2026 -- Aug 2026}{Mobile \& Fullstack Developer Intern}{Medan, Sumatera Utara}
+\begin{itemize}
+  \item Built the \textbf{SIAP} mobile attendance app with \textbf{React Native 0.74 (TypeScript)}: GPS-validated selfie check-in, anti-fake-GPS/root detection, and offline mode with auto-sync.
+  \item Implemented real-time tracking via \textbf{WebSocket} between the mobile client and \textbf{Node.js 20 + Express} backend; \textbf{PostgreSQL 16} for primary data store, \textbf{MinIO} for photo/PDF storage on NevaCloud VPS.
+  \item Conducted \textbf{API testing with Postman} across all REST endpoints: attendance submission, report generation, and BAST PDF auto-generation flows.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvheading{PDAM Tirtanadi Medan}{Jan 2026 -- Mar 2026}{Software Engineer Intern}{Medan, Sumatera Utara}
+\begin{itemize}
+  \item Developed an internal web-based monitoring and reporting system to track operational data across departments, improving visibility into daily workflows.
+  \item Implemented data input and report generation features, enabling management to generate structured operational reports and monitor key metrics in real time.
+\end{itemize}
+
+% ---- PROJECTS ---------------------------------------------
+\section{Projects}
+
+\cvproject{SIAP: Attendance \& Reporting System \normalfont\textit{(Internship @ Flashcom Indonesia)}}{Mar 2026 -- Aug 2026}{React Native 0.74 (TS) \textbullet{} Vite + React (TS) \textbullet{} Node.js 20 + Express (TS) \textbullet{} PostgreSQL 16 \textbullet{} MinIO \textbullet{} WebSocket \textbullet{} NevaCloud VPS}
+\begin{itemize}
+  \item Developed cross-platform mobile app (Android/iOS) for 3 user divisions (Security, Customer Service, Utility) with selfie + GPS attendance, anti-fake-GPS/root detection, and offline auto-sync.
+  \item Built a real-time web admin dashboard (Vite + React) with live tracking, report approval, incident reporting with photo watermarks, and HR/Payroll CSV export.
+  \item Automated digital handovers with auto-generated BAST PDFs; all media stored in MinIO object storage on NevaCloud VPS.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvproject{Facial Skin Disease Classification System \normalfont\textit{(Tugas Akhir / Final Year Project)}}{Aug 2025 -- Jan 2026}{Flutter (Dart) \textbullet{} Golang REST API \textbullet{} PyTorch \textbullet{} ConvNeXt Tiny \textbullet{} Roboflow}
+\begin{itemize}
+  \item Trained a \textbf{ConvNeXt Tiny} model (PyTorch) on a \textbf{4,000-image} dataset annotated with \textbf{Roboflow}, achieving \textbf{92\% classification accuracy}.
+  \item Integrated the trained model into a \textbf{Golang REST API} for real-time inference, consumed by a cross-platform \textbf{Flutter} mobile app (Android/iOS).
+  \item Delivered end-to-end ML-to-mobile pipeline: Roboflow annotation, PyTorch training, Golang inference API, Flutter UI.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvproject{PUSMASIB: Community Health Center Mobile App \normalfont\textit{(Fullstack Developer)}}{Jan 2025 -- Jun 2025}{Flutter (Dart) \textbullet{} Laravel REST API (PHP) \textbullet{} Firebase Firestore \textbullet{} Firebase Authentication}
+\begin{itemize}
+  \item Built a cross-platform mobile app (Android/iOS) for Siborongborong Health Center: online visit registration, real-time queue notifications, and patient medical history.
+  \item Developed a \textbf{Laravel (PHP) REST API} backend; integrated \textbf{Firebase Firestore} for real-time data sync and \textbf{Firebase Authentication} for secure user access.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvproject{PT Aoki Mori Indonesia: Company Website \& Student Registration System \normalfont\textit{(Live: lpkmoricentre.co.id)}}{Nov 2025 -- Dec 2025}{Laravel Inertia \textbullet{} ReactJS \textbullet{} PostgreSQL \textbullet{} Docker Compose}
+\begin{itemize}
+  \item Developed a company profile website integrated with an online student registration system and multilingual support (Japanese, English, Indonesian).
+  \item Containerized application services using \textbf{Docker Compose} and delivered responsive UI aligned with institutional branding.
+  \item Designed a \textbf{PostgreSQL} relational database for student records, course data, and admin reporting; deployed live at \href{https://lpkmoricentre.co.id}{lpkmoricentre.co.id}.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvproject{KicksNStyle: E-Commerce Shoe Sales App \normalfont\textit{(Fullstack Developer)}}{Nov 2024 -- Dec 2024}{Flutter (Dart) \textbullet{} Laravel REST API \textbullet{} Firebase Firestore \textbullet{} Firebase Authentication}\\[1pt]
+Built a full-stack mobile e-commerce app (Android/iOS) with \textbf{Flutter} frontend, \textbf{Laravel REST API} backend, and \textbf{Firebase} for data storage and user authentication.
+
+% ---- LEADERSHIP & ORGANIZATION ----------------------------
+\section{Leadership \& Organization}
+
+\cvheading{Vice Chairman, HIMATIF, Institut Teknologi Del}{Aug 2024 -- Dec 2025}{Himpunan Mahasiswa Teknologi Informasi}{Laguboti, Sumatera Utara}
+\begin{itemize}
+  \item Led organizational operations alongside the Chair, implementing work programs to develop technical and professional skills for IT students.
+  \item Bridged communication between students and faculty, supporting non-academic curriculum development across departments.
+\end{itemize}
+
+\vspace{3pt}
+
+\cvheading{Deputy Chairman, Student Cadre Development Event, HIMATIF}{Sep 2024}{Institut Teknologi Del}{}
+\begin{itemize}
+  \item Oversaw execution of cadre development event, coordinating all committee divisions to deliver program objectives on schedule.
+\end{itemize}
+
+% ---- EDUCATION --------------------------------------------
+\section{Education}
+
+\cvheading{Institut Teknologi Del}{Aug 2023 -- Aug 2026}{D3 (Associate Degree) in Information Technology \quad|\quad GPA: \textbf{3.26 / 4.00}}{Laguboti, Sumatera Utara}
+
+% ---- CERTIFICATIONS & ACHIEVEMENTS ------------------------
+\section{Certifications \& Achievements}
+
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+  2025 & TOEFL ITP: Score \textbf{500 / 677} \\
+  2025 & Full Stack Application Development Capstone Project \\
+  2025 & Full Stack Software Developer Assessment \\
+  2025 & Developing Front-End Apps with React \\
+  2025 & Software Quality Assurance and Testing \textit{(Webinar)} \\
+\end{tabularx}
+
+\end{document}
